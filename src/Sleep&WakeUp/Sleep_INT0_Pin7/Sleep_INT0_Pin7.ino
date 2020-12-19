@@ -36,14 +36,18 @@ void setup() {
 
   cli();  // Si Deshabilito interrupciones, delay() ya no funcionará y si lo uso no se comportará correctamente pq usa las interrupciones de los timers --> uso una función DelMs(donde calibro aprox los ms )
   pinMode(led,OUTPUT);
-  pinMode(PB1,INPUT_PULLUP);pinMode(PB2,INPUT_PULLUP);pinMode(PB3,INPUT_PULLUP);pinMode(PB4,INPUT_PULLUP);pinMode(PB5,INPUT_PULLUP); //Puertos no usados como INPUT_PULLUP
-  adc_disable();
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);            // Desactivo ADC y configuro Modo en el que voy a dormir
+  //pinMode(PB1,INPUT_PULLUP);
+  pinMode(PB2,INPUT_PULLUP);              //pulsador para despertar por INT0
+  //pinMode(PB3,INPUT_PULLUP);
+  //pinMode(PB4,INPUT_PULLUP);
+  pinMode(PB5,INPUT_PULLUP);             //Pulsador Reset
+  
+  
   bitSet(GIMSK,INT0);                             // GIMSK (  INT0=1  PCIE = 0 ) Configuro INterrupción INT0 ( puerto PB2 = pin7 ) 
   bitClear(GIMSK,PCIE);
   bitClear(MCUCR,ISC00);                          // MCUCR ( ICSC00 = 0  ISC01 = 0  Activo por nivel bajo la interrupción INT0 )
   bitClear(MCUCR,ISC01);
-  
+ 
  }
 
 //*****************************************************************************************************************************************************************************
@@ -88,16 +92,20 @@ void loop() {
 //Uso esta función para producir unos retrasos artificiales, sin interrupciones, solo por tiempo usado
 //en los bucles for
 
-void DelMs(unsigned int milisg){                         // Nota: funciona con volatile 
-  for (volatile int i=0; i<milisg; i++){
-    for(volatile int j=0; j<Calib_ms; j++){     //este bucle se calibra para que dure aprox 1 ms
-      //x bucles/msg   200msg  == 200 veces * x
+void DelMs(unsigned int milisg){                         // Nota: las variables de los bucles for se definen como "volatile"
+  for (volatile int i=0; i<milisg; i++){                 //Pq si se produjese una interrupción a mitad del for, al volver de la interrupción sigue por donde se quedó ( no pierde la cuenta del for )
+    for(volatile int j=0; j<Calib_ms; j++){             //este bucle se calibra para que dure aprox 1 ms
+      //x bucles/msg   200msg  == 200 veces * x         // unos 49-50 bucles tardan 1 ms ( a 1MHz ) se puede ajsutar con la variable "Calib_ms"
     }
   }
 }
 
 //*************************************************************************************************************
 void A_Dormir(){
+
+  bitSet(PRR,PRUSI);                              //Desactivo USI
+  adc_disable();                                  //Antes de dormir desactivo ADC 
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);            //y configuro Modo en el que voy a dormir
   sei();                //Habilito int antes de ponerme a dormir pq si no, no podré despertarlo ( salvo reset o apagarlo )
   sleep_enable();       //solo habilitaré int aquí para poder despertar por INT0
   sleep_cpu();
