@@ -14,6 +14,10 @@
  * Se controla bien cuando están las interrupciones activas para evitar que se produzcan interrupciones incontroladas, solo las queremos para despertar el micro
  * por el pin7
  * 
+ * 
+ *                                                             CONSUMO: 0.2 uA durmiendo (Alimentando con Pila CR2032 )
+ * 
+ * 
  ******************************************************************************************************************************************************************************
  ******************************************************************************************************************************************************************************/
  
@@ -23,9 +27,12 @@
 
 #define led 0   // led en PB0
 
+//#define adc_disable() bitClear(ADCSRA,ADEN)   
+//#define adc_enable()  bitSet(ADCSRA,ADEN)
 #define adc_disable() (ADCSRA &=~(1 <<ADEN))   // ADEN = 7   1 << 7  = >  1000_0000 invertido = > 0111_1111  esto AND con lo que había lo q hace es poner a 0 el bit ADEN  ADEN=0
 #define adc_enable() (ADCSRA |= (1 <<ADEN))    //                         1000_0000 or con ADCSRA =>  ADEN =1
-#define Calib_ms 49                            // 1 ms a 1MHz 49 ciclos
+
+#define Calib_ms 49                            // 49 ciclos for = 1ms ( a una frecuencia de 1 MHz )
 
 volatile bool interrupcion_ok = false;         // Uso tipo volatile para que la interrupción no le afecte
 
@@ -103,7 +110,7 @@ void DelMs(unsigned int milisg){                         // Nota: las variables 
 //*************************************************************************************************************
 void A_Dormir(){
 
-  bitSet(PRR,PRUSI);                              //Desactivo USI
+  bitSet(PRR,PRUSI);                              //Reloj del USI off
   adc_disable();                                  //Antes de dormir desactivo ADC 
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);            //y configuro Modo en el que voy a dormir
   sei();                //Habilito int antes de ponerme a dormir pq si no, no podré despertarlo ( salvo reset o apagarlo )

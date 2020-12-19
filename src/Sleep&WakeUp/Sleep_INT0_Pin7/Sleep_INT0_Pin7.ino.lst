@@ -1,5 +1,5 @@
 
-C:\Users\User\AppData\Local\Temp\arduino_build_776015/Sleep_INT0_Pin7.ino.elf:     file format elf32-avr
+C:\Users\User\AppData\Local\Temp\arduino_build_456813/Sleep_INT0_Pin7.ino.elf:     file format elf32-avr
 
 
 Disassembly of section .text:
@@ -357,7 +357,7 @@ C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cor
 
 00000134 <DelMs(unsigned int)>:
 _Z5DelMsj():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:95
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:102
 //************************************************************************************************************
 
 //Uso esta función para producir unos retrasos artificiales, sin interrupciones, solo por tiempo usado
@@ -370,7 +370,7 @@ void DelMs(unsigned int milisg){                         // Nota: las variables 
  13a:	00 d0       	rcall	.+0      	; 0x13c <DelMs(unsigned int)+0x8>
  13c:	cd b7       	in	r28, 0x3d	; 61
  13e:	de b7       	in	r29, 0x3e	; 62
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:96
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:103
   for (volatile int i=0; i<milisg; i++){                 //Pq si se produjese una interrupción a mitad del for, al volver de la interrupción sigue por donde se quedó ( no pierde la cuenta del for )
  140:	1c 82       	std	Y+4, r1	; 0x04
  142:	1b 82       	std	Y+3, r1	; 0x03
@@ -379,7 +379,7 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:96
  148:	28 17       	cp	r18, r24
  14a:	39 07       	cpc	r19, r25
  14c:	a8 f4       	brcc	.+42     	; 0x178 <DelMs(unsigned int)+0x44>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:97
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:104
     for(volatile int j=0; j<Calib_ms; j++){             //este bucle se calibra para que dure aprox 1 ms
  14e:	1a 82       	std	Y+2, r1	; 0x02
  150:	19 82       	std	Y+1, r1	; 0x01
@@ -395,7 +395,7 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:97
  164:	3a 83       	std	Y+2, r19	; 0x02
  166:	29 83       	std	Y+1, r18	; 0x01
  168:	f4 cf       	rjmp	.-24     	; 0x152 <DelMs(unsigned int)+0x1e>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:96
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:103
 
 //Uso esta función para producir unos retrasos artificiales, sin interrupciones, solo por tiempo usado
 //en los bucles for
@@ -409,7 +409,7 @@ void DelMs(unsigned int milisg){                         // Nota: las variables 
  172:	3c 83       	std	Y+4, r19	; 0x04
  174:	2b 83       	std	Y+3, r18	; 0x03
  176:	e6 cf       	rjmp	.-52     	; 0x144 <DelMs(unsigned int)+0x10>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:101
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:108
     for(volatile int j=0; j<Calib_ms; j++){             //este bucle se calibra para que dure aprox 1 ms
       //x bucles/msg   200msg  == 200 veces * x         // unos 49-50 bucles tardan 1 ms ( a 1MHz ) se puede ajsutar con la variable "Calib_ms"
     }
@@ -425,7 +425,7 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:101
 
 00000186 <Parpadea_led(int)>:
 _Z12Parpadea_ledi():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:115
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:123
   sleep_enable();       //solo habilitaré int aquí para poder despertar por INT0
   sleep_cpu();
 }
@@ -435,7 +435,7 @@ void Parpadea_led(int tiempo){
  186:	cf 93       	push	r28
  188:	df 93       	push	r29
  18a:	ec 01       	movw	r28, r24
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:116
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:124
   digitalWrite(led,HIGH); DelMs(tiempo); digitalWrite(led,LOW); DelMs(tiempo);
  18c:	81 e0       	ldi	r24, 0x01	; 1
  18e:	67 df       	rcall	.-306    	; 0x5e <digitalWrite.constprop.0>
@@ -444,11 +444,11 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:116
  194:	80 e0       	ldi	r24, 0x00	; 0
  196:	63 df       	rcall	.-314    	; 0x5e <digitalWrite.constprop.0>
  198:	ce 01       	movw	r24, r28
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:117
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:125
 }
  19a:	df 91       	pop	r29
  19c:	cf 91       	pop	r28
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:116
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:124
   sleep_cpu();
 }
 
@@ -572,7 +572,7 @@ C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cor
 
 00000234 <__vector_1>:
 __vector_1():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:122
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:130
 }
 
 
@@ -585,14 +585,14 @@ ISR(INT0_vect)
  23a:	0f 92       	push	r0
  23c:	11 24       	eor	r1, r1
  23e:	8f 93       	push	r24
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:123
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:131
   cli();                 //Aseguro int desactivadas para q no se produzca ninguna otra mientras estoy en esta int
  240:	f8 94       	cli
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:124
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:132
   interrupcion_ok=true;  //actualizo Flag
  242:	81 e0       	ldi	r24, 0x01	; 1
  244:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <interrupcion_ok>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:127
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:135
   //cuenta_int++;        // aquí no funciona bien ( aunque sea volatile )
   //cuando sale de la interrupción, se activa automáticamente la interrupción  --> sei()  Ojo con esto.
 }
@@ -721,7 +721,7 @@ C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cor
     sbi(ADCSRA, ADEN);
  2a0:	37 9a       	sbi	0x06, 7	; 6
 setup():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:37
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:44
 
 //************************************************************************************************************************************************************************
 //************************************************************************************************************************************************************************
@@ -729,48 +729,48 @@ void setup() {
 
   cli();  // Si Deshabilito interrupciones, delay() ya no funcionará y si lo uso no se comportará correctamente pq usa las interrupciones de los timers --> uso una función DelMs(donde calibro aprox los ms )
  2a2:	f8 94       	cli
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:38
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:45
   pinMode(led,OUTPUT);
  2a4:	61 e0       	ldi	r22, 0x01	; 1
  2a6:	80 e0       	ldi	r24, 0x00	; 0
  2a8:	14 df       	rcall	.-472    	; 0xd2 <pinMode>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:40
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:47
   //pinMode(PB1,INPUT_PULLUP);
   pinMode(PB2,INPUT_PULLUP);              //pulsador para despertar por INT0
  2aa:	62 e0       	ldi	r22, 0x02	; 2
  2ac:	82 e0       	ldi	r24, 0x02	; 2
  2ae:	11 df       	rcall	.-478    	; 0xd2 <pinMode>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:43
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:50
   //pinMode(PB3,INPUT_PULLUP);
   //pinMode(PB4,INPUT_PULLUP);
   pinMode(PB5,INPUT_PULLUP);             //Pulsador Reset
  2b0:	62 e0       	ldi	r22, 0x02	; 2
  2b2:	85 e0       	ldi	r24, 0x05	; 5
  2b4:	0e df       	rcall	.-484    	; 0xd2 <pinMode>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:46
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:53
   
   
   bitSet(GIMSK,INT0);                             // GIMSK (  INT0=1  PCIE = 0 ) Configuro INterrupción INT0 ( puerto PB2 = pin7 ) 
  2b6:	8b b7       	in	r24, 0x3b	; 59
  2b8:	80 64       	ori	r24, 0x40	; 64
  2ba:	8b bf       	out	0x3b, r24	; 59
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:47
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:54
   bitClear(GIMSK,PCIE);
  2bc:	8b b7       	in	r24, 0x3b	; 59
  2be:	8f 7d       	andi	r24, 0xDF	; 223
  2c0:	8b bf       	out	0x3b, r24	; 59
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:48
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:55
   bitClear(MCUCR,ISC00);                          // MCUCR ( ICSC00 = 0  ISC01 = 0  Activo por nivel bajo la interrupción INT0 )
  2c2:	85 b7       	in	r24, 0x35	; 53
  2c4:	8e 7f       	andi	r24, 0xFE	; 254
  2c6:	85 bf       	out	0x35, r24	; 53
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:49
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:56
   bitClear(MCUCR,ISC01);
  2c8:	85 b7       	in	r24, 0x35	; 53
  2ca:	8d 7f       	andi	r24, 0xFD	; 253
  2cc:	85 bf       	out	0x35, r24	; 53
 loop():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:62
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:69
    static unsigned int cuenta_int=0; 
    
   //********************* Aquí pondré todo lo q tiene q hacer antes de ir a dormir **************************
@@ -780,14 +780,14 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:62
  2ce:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <interrupcion_ok>
  2d2:	81 11       	cpse	r24, r1
  2d4:	1e c0       	rjmp	.+60     	; 0x312 <__stack+0xb3>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:63
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:70
     cuenta_int=0;
  2d6:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <_edata+0x1>
  2da:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <_edata>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:64
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:71
     interrupcion_ok=false;
  2de:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <interrupcion_ok>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:65
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:72
     for(int i=0; i<3; i++){ Parpadea_led(250); }
  2e2:	8a ef       	ldi	r24, 0xFA	; 250
  2e4:	90 e0       	ldi	r25, 0x00	; 0
@@ -799,38 +799,38 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:65
  2f0:	90 e0       	ldi	r25, 0x00	; 0
  2f2:	49 df       	rcall	.-366    	; 0x186 <Parpadea_led(int)>
 A_Dormir():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:106
-}
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:114
 
 //*************************************************************************************************************
 void A_Dormir(){
 
-  bitSet(PRR,PRUSI);                              //Desactivo USI
+  //bitSet(PRR,PRADC);                              //Reloj del ADC off...... NO--> aumenta i
+  bitSet(PRR,PRUSI);                              //Reloj del USI off
  2f4:	80 b5       	in	r24, 0x20	; 32
  2f6:	82 60       	ori	r24, 0x02	; 2
  2f8:	80 bd       	out	0x20, r24	; 32
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:107
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:115
   adc_disable();                                  //Antes de dormir desactivo ADC 
  2fa:	37 98       	cbi	0x06, 7	; 6
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:108
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:116
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);            //y configuro Modo en el que voy a dormir
  2fc:	85 b7       	in	r24, 0x35	; 53
  2fe:	87 7e       	andi	r24, 0xE7	; 231
  300:	80 61       	ori	r24, 0x10	; 16
  302:	85 bf       	out	0x35, r24	; 53
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:109
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:117
   sei();                //Habilito int antes de ponerme a dormir pq si no, no podré despertarlo ( salvo reset o apagarlo )
  304:	78 94       	sei
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:110
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:118
   sleep_enable();       //solo habilitaré int aquí para poder despertar por INT0
  306:	85 b7       	in	r24, 0x35	; 53
  308:	80 62       	ori	r24, 0x20	; 32
  30a:	85 bf       	out	0x35, r24	; 53
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:111
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:119
   sleep_cpu();
  30c:	88 95       	sleep
 loop():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:84
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:91
   }
    
     A_Dormir();                               // solo despierta por int  INT0, aquí habilitaré int para poder despertar por INT0
@@ -839,7 +839,7 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:84
     cli();    //importante, si no las desactivo puedo producir una INT0 en cualquier parte del código y prefiero tenerlo controlado y que solo se produzca para despertar
  30e:	f8 94       	cli
  310:	de cf       	rjmp	.-68     	; 0x2ce <__stack+0x6f>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:69
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:76
     interrupcion_ok=false;
     for(int i=0; i<3; i++){ Parpadea_led(250); }
   }
@@ -851,17 +851,17 @@ D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:69
  31a:	21 96       	adiw	r28, 0x01	; 1
  31c:	d0 93 61 00 	sts	0x0061, r29	; 0x800061 <_edata+0x1>
  320:	c0 93 60 00 	sts	0x0060, r28	; 0x800060 <_edata>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:70
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:77
     interrupcion_ok=false;
  324:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <interrupcion_ok>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:72
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:79
     
     Parpadea_led(1000);                                  //Hago todo lo q quiera tras ocurrir la interrución q me despertó 
  328:	88 ee       	ldi	r24, 0xE8	; 232
  32a:	93 e0       	ldi	r25, 0x03	; 3
  32c:	2c df       	rcall	.-424    	; 0x186 <Parpadea_led(int)>
 main():
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:73
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:80
     for (int i=0;i<cuenta_int; i++){
  32e:	10 e0       	ldi	r17, 0x00	; 0
  330:	00 e0       	ldi	r16, 0x00	; 0
@@ -869,12 +869,12 @@ loop():
  332:	0c 17       	cp	r16, r28
  334:	1d 07       	cpc	r17, r29
  336:	f0 f6       	brcc	.-68     	; 0x2f4 <__stack+0x95>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:74
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:81
       Parpadea_led(200);
  338:	88 ec       	ldi	r24, 0xC8	; 200
  33a:	90 e0       	ldi	r25, 0x00	; 0
  33c:	24 df       	rcall	.-440    	; 0x186 <Parpadea_led(int)>
-D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:73
+D:\jospicant\Arduino\Attiny\Sleep_INT0_Pin7/Sleep_INT0_Pin7.ino:80
                                                         //Aquí haré todo lo que quiera hacer tras haber despertado por INT0
     cuenta_int++;                                        //actualizo cuenta y flag de interrupción
     interrupcion_ok=false;
