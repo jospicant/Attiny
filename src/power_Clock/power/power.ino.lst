@@ -1,0 +1,925 @@
+
+C:\Users\User\AppData\Local\Temp\arduino_build_814407/power05.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	1d c0       	rjmp	.+58     	; 0x3c <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	e4 c0       	rjmp	.+456    	; 0x1d4 <__vector_5>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+
+0000001e <__trampolines_end>:
+__trampolines_start():
+  1e:	00 00       	nop
+  20:	00 00       	nop
+  22:	37 00       	.word	0x0037	; ????
+
+00000024 <port_to_output_PGM>:
+  24:	00 00 00 00 38 00                                   ....8.
+
+0000002a <digital_pin_to_port_PGM>:
+  2a:	02 02 02 02 02 02                                   ......
+
+00000030 <digital_pin_to_bit_mask_PGM>:
+  30:	01 02 04 08 10 20                                   ..... 
+
+00000036 <digital_pin_to_timer_PGM>:
+  36:	01 02 00 00 04 00                                   ......
+
+0000003c <__ctors_end>:
+__dtors_end():
+  3c:	11 24       	eor	r1, r1
+  3e:	1f be       	out	0x3f, r1	; 63
+  40:	cf e5       	ldi	r28, 0x5F	; 95
+  42:	d2 e0       	ldi	r29, 0x02	; 2
+  44:	de bf       	out	0x3e, r29	; 62
+  46:	cd bf       	out	0x3d, r28	; 61
+
+00000048 <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  48:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  52:	a9 36       	cpi	r26, 0x69	; 105
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  54:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+.do_clear_bss_start():
+  58:	07 d1       	rcall	.+526    	; 0x268 <main>
+  5a:	8d c1       	rjmp	.+794    	; 0x376 <_exit>
+
+0000005c <__bad_interrupt>:
+__vector_1():
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <digitalWrite.constprop.0>:
+digitalWrite.constprop.0():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:139
+}
+
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+  if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+  uint8_t timer = digitalPinToTimer(pin);
+  5e:	e6 e3       	ldi	r30, 0x36	; 54
+  60:	f0 e0       	ldi	r31, 0x00	; 0
+  62:	24 91       	lpm	r18, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:140
+  uint8_t bit = digitalPinToBitMask(pin);
+  64:	e0 e3       	ldi	r30, 0x30	; 48
+  66:	f0 e0       	ldi	r31, 0x00	; 0
+  68:	94 91       	lpm	r25, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:141
+  uint8_t port = digitalPinToPort(pin);
+  6a:	ea e2       	ldi	r30, 0x2A	; 42
+  6c:	f0 e0       	ldi	r31, 0x00	; 0
+  6e:	e4 91       	lpm	r30, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:144
+  volatile uint8_t *out;
+
+  if (port == NOT_A_PIN) return;
+  70:	ee 23       	and	r30, r30
+  72:	c1 f0       	breq	.+48     	; 0xa4 <digitalWrite.constprop.0+0x46>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:148
+
+  // If the pin that support PWM output, we need to turn it off
+  // before doing a digital write.
+  if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+  74:	22 23       	and	r18, r18
+  76:	29 f0       	breq	.+10     	; 0x82 <digitalWrite.constprop.0+0x24>
+turnOffPWM():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:67
+}
+
+static void turnOffPWM(uint8_t timer)
+{
+  #if defined(TCCR0A) && defined(COM0A1)
+  if( timer == TIMER0A){
+  78:	21 30       	cpi	r18, 0x01	; 1
+  7a:	a9 f4       	brne	.+42     	; 0xa6 <digitalWrite.constprop.0+0x48>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:68
+    cbi(TCCR0A, COM0A1);
+  7c:	2a b5       	in	r18, 0x2a	; 42
+  7e:	2f 77       	andi	r18, 0x7F	; 127
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:75
+  } else
+  #endif
+
+  #if defined(TCCR0A) && defined(COM0B1)
+  if( timer == TIMER0B){
+    cbi(TCCR0A, COM0B1);
+  80:	2a bd       	out	0x2a, r18	; 42
+digitalWrite.constprop.0():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:150
+
+  // If the pin that support PWM output, we need to turn it off
+  // before doing a digital write.
+  if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+
+  out = portOutputRegister(port);
+  82:	f0 e0       	ldi	r31, 0x00	; 0
+  84:	ee 0f       	add	r30, r30
+  86:	ff 1f       	adc	r31, r31
+  88:	ec 5d       	subi	r30, 0xDC	; 220
+  8a:	ff 4f       	sbci	r31, 0xFF	; 255
+  8c:	a5 91       	lpm	r26, Z+
+  8e:	b4 91       	lpm	r27, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:152
+
+  if (val == LOW) {
+  90:	81 11       	cpse	r24, r1
+  92:	1a c0       	rjmp	.+52     	; 0xc8 <digitalWrite.constprop.0+0x6a>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:153
+    uint8_t oldSREG = SREG;
+  94:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:154
+    cli();
+  96:	f8 94       	cli
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:155
+    *out &= ~bit;
+  98:	2c 91       	ld	r18, X
+  9a:	e9 2f       	mov	r30, r25
+  9c:	e0 95       	com	r30
+  9e:	e2 23       	and	r30, r18
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:160
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+    cli();
+    *out |= bit;
+  a0:	ec 93       	st	X, r30
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:161
+    SREG = oldSREG;
+  a2:	8f bf       	out	0x3f, r24	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:163
+  }
+}
+  a4:	08 95       	ret
+turnOffPWM():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:74
+    //cbi(TCCR0A, COM0A0);
+  } else
+  #endif
+
+  #if defined(TCCR0A) && defined(COM0B1)
+  if( timer == TIMER0B){
+  a6:	22 30       	cpi	r18, 0x02	; 2
+  a8:	19 f4       	brne	.+6      	; 0xb0 <digitalWrite.constprop.0+0x52>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:75
+    cbi(TCCR0A, COM0B1);
+  aa:	2a b5       	in	r18, 0x2a	; 42
+  ac:	2f 7d       	andi	r18, 0xDF	; 223
+  ae:	e8 cf       	rjmp	.-48     	; 0x80 <digitalWrite.constprop.0+0x22>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:105
+    cbi(TCCR1C,COM1D0);
+    //cbi(TCCR1A,PWM1D);
+  } else
+    #endif
+  #if defined(TCCR1) && defined(COM1A1)
+  if(timer == TIMER1A){
+  b0:	23 30       	cpi	r18, 0x03	; 3
+  b2:	21 f4       	brne	.+8      	; 0xbc <digitalWrite.constprop.0+0x5e>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:106
+    cbi(TCCR1, COM1A1);
+  b4:	20 b7       	in	r18, 0x30	; 48
+  b6:	2f 7d       	andi	r18, 0xDF	; 223
+  b8:	20 bf       	out	0x30, r18	; 48
+  ba:	e3 cf       	rjmp	.-58     	; 0x82 <digitalWrite.constprop.0+0x24>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:125
+  #endif
+  } else
+  #endif
+
+  #if defined(TCCR1) && defined(COM1B1)
+  if( timer == TIMER1B){
+  bc:	24 30       	cpi	r18, 0x04	; 4
+  be:	09 f7       	brne	.-62     	; 0x82 <digitalWrite.constprop.0+0x24>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:126
+    cbi(GTCCR, COM1B1);
+  c0:	2c b5       	in	r18, 0x2c	; 44
+  c2:	2f 7d       	andi	r18, 0xDF	; 223
+  c4:	2c bd       	out	0x2c, r18	; 44
+  c6:	dd cf       	rjmp	.-70     	; 0x82 <digitalWrite.constprop.0+0x24>
+digitalWrite.constprop.0():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:158
+    uint8_t oldSREG = SREG;
+    cli();
+    *out &= ~bit;
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+  c8:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:159
+    cli();
+  ca:	f8 94       	cli
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:160
+    *out |= bit;
+  cc:	ec 91       	ld	r30, X
+  ce:	e9 2b       	or	r30, r25
+  d0:	e7 cf       	rjmp	.-50     	; 0xa0 <digitalWrite.constprop.0+0x42>
+
+000000d2 <pinMode>:
+pinMode():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:33
+#define ARDUINO_MAIN
+#include "wiring_private.h"
+#include "pins_arduino.h"
+
+void pinMode(uint8_t pin, uint8_t mode)
+{
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:35
+  if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+  uint8_t bit = digitalPinToBitMask(pin);
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+  d8:	fc 01       	movw	r30, r24
+  da:	e0 5d       	subi	r30, 0xD0	; 208
+  dc:	ff 4f       	sbci	r31, 0xFF	; 255
+  de:	24 91       	lpm	r18, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:36
+  uint8_t port = digitalPinToPort(pin);
+  e0:	86 5d       	subi	r24, 0xD6	; 214
+  e2:	9f 4f       	sbci	r25, 0xFF	; 255
+  e4:	fc 01       	movw	r30, r24
+  e6:	84 91       	lpm	r24, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:39
+  volatile uint8_t *reg, *out;
+
+  if (port == NOT_A_PIN) return;
+  e8:	88 23       	and	r24, r24
+  ea:	d1 f0       	breq	.+52     	; 0x120 <pinMode+0x4e>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:41
+
+  reg = portModeRegister(port);
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	88 0f       	add	r24, r24
+  f0:	99 1f       	adc	r25, r25
+  f2:	fc 01       	movw	r30, r24
+  f4:	e2 5e       	subi	r30, 0xE2	; 226
+  f6:	ff 4f       	sbci	r31, 0xFF	; 255
+  f8:	a5 91       	lpm	r26, Z+
+  fa:	b4 91       	lpm	r27, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:42
+  out = portOutputRegister(port);
+  fc:	fc 01       	movw	r30, r24
+  fe:	ec 5d       	subi	r30, 0xDC	; 220
+ 100:	ff 4f       	sbci	r31, 0xFF	; 255
+ 102:	c5 91       	lpm	r28, Z+
+ 104:	d4 91       	lpm	r29, Z
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:50
+    uint8_t oldSREG = SREG;
+                cli();
+    *reg &= ~bit;
+    *out &= ~bit;
+    SREG = oldSREG;
+  } else if (mode == INPUT_PULLUP) {
+ 106:	62 30       	cpi	r22, 0x02	; 2
+ 108:	71 f4       	brne	.+28     	; 0x126 <pinMode+0x54>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:51
+    uint8_t oldSREG = SREG;
+ 10a:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:52
+                cli();
+ 10c:	f8 94       	cli
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:53
+    *reg &= ~bit;
+ 10e:	3c 91       	ld	r19, X
+ 110:	82 2f       	mov	r24, r18
+ 112:	80 95       	com	r24
+ 114:	83 23       	and	r24, r19
+ 116:	8c 93       	st	X, r24
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:54
+    *out |= bit;
+ 118:	e8 81       	ld	r30, Y
+ 11a:	2e 2b       	or	r18, r30
+ 11c:	28 83       	st	Y, r18
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:55
+    SREG = oldSREG;
+ 11e:	9f bf       	out	0x3f, r25	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:62
+    uint8_t oldSREG = SREG;
+                cli();
+    *reg |= bit;
+    SREG = oldSREG;
+  }
+}
+ 120:	df 91       	pop	r29
+ 122:	cf 91       	pop	r28
+ 124:	08 95       	ret
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:57
+                cli();
+    *reg &= ~bit;
+    *out |= bit;
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+ 126:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:58
+                cli();
+ 128:	f8 94       	cli
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:59
+    *reg |= bit;
+ 12a:	ec 91       	ld	r30, X
+ 12c:	2e 2b       	or	r18, r30
+ 12e:	2c 93       	st	X, r18
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:60
+    SREG = oldSREG;
+ 130:	8f bf       	out	0x3f, r24	; 63
+ 132:	f6 cf       	rjmp	.-20     	; 0x120 <pinMode+0x4e>
+
+00000134 <micros>:
+micros():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:190
+}
+
+unsigned long micros()
+{
+  unsigned long m;
+  uint8_t oldSREG = SREG, t;
+ 134:	3f b7       	in	r19, 0x3f	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:192
+
+  cli();
+ 136:	f8 94       	cli
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:193
+  m = millis_timer_overflow_count;
+ 138:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <millis_timer_overflow_count>
+ 13c:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <millis_timer_overflow_count+0x1>
+ 140:	a0 91 67 00 	lds	r26, 0x0067	; 0x800067 <millis_timer_overflow_count+0x2>
+ 144:	b0 91 68 00 	lds	r27, 0x0068	; 0x800068 <millis_timer_overflow_count+0x3>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:195
+#if defined(TCNT0) && (TIMER_TO_USE_FOR_MILLIS == 0) && !defined(TCW0)
+  t = TCNT0;
+ 148:	22 b7       	in	r18, 0x32	; 50
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:210
+
+#if defined(TIFR0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  if ((TIFR0 & _BV(TOV0)) && (t < 255))
+    m++;
+#elif defined(TIFR) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  if ((TIFR & _BV(TOV0)) && (t < 255))
+ 14a:	08 b6       	in	r0, 0x38	; 56
+ 14c:	01 fe       	sbrs	r0, 1
+ 14e:	05 c0       	rjmp	.+10     	; 0x15a <micros+0x26>
+ 150:	2f 3f       	cpi	r18, 0xFF	; 255
+ 152:	19 f0       	breq	.+6      	; 0x15a <micros+0x26>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:211
+    m++;
+ 154:	01 96       	adiw	r24, 0x01	; 1
+ 156:	a1 1d       	adc	r26, r1
+ 158:	b1 1d       	adc	r27, r1
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:220
+#elif defined(TIFR) && (TIMER_TO_USE_FOR_MILLIS == 1)
+  if ((TIFR & _BV(TOV1)) && (t < 255))
+    m++;
+#endif
+
+  SREG = oldSREG;
+ 15a:	3f bf       	out	0x3f, r19	; 63
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:227
+
+#if F_CPU < 1000000L
+  return ((m << 8) + t) * MillisTimer_Prescale_Value * (1000000L/F_CPU);
+#else
+#if (MillisTimer_Prescale_Value % clockCyclesPerMicrosecond() == 0 ) // Can we just do it the naive way? If so great!
+  return ((m << 8) + t) * (MillisTimer_Prescale_Value / clockCyclesPerMicrosecond());
+ 15c:	ba 2f       	mov	r27, r26
+ 15e:	a9 2f       	mov	r26, r25
+ 160:	98 2f       	mov	r25, r24
+ 162:	88 27       	eor	r24, r24
+ 164:	bc 01       	movw	r22, r24
+ 166:	cd 01       	movw	r24, r26
+ 168:	62 0f       	add	r22, r18
+ 16a:	71 1d       	adc	r23, r1
+ 16c:	81 1d       	adc	r24, r1
+ 16e:	91 1d       	adc	r25, r1
+ 170:	43 e0       	ldi	r20, 0x03	; 3
+ 172:	66 0f       	add	r22, r22
+ 174:	77 1f       	adc	r23, r23
+ 176:	88 1f       	adc	r24, r24
+ 178:	99 1f       	adc	r25, r25
+ 17a:	4a 95       	dec	r20
+ 17c:	d1 f7       	brne	.-12     	; 0x172 <micros+0x3e>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:270
+  //the high part gets divided by cCPuS then multiplied by the prescaler. Then take the low 8 bits plus the high part modulo-cCPuS to correct for the division, then multiply that by the prescaler value first before dividing by cCPuS, and finally add the two together.
+  //return ((m << 8 )/clockCyclesPerMicrosecond()* MillisTimer_Prescale_Value) + ((t+(((m<<8)%clockCyclesPerMicrosecond())) * MillisTimer_Prescale_Value / clockCyclesPerMicrosecond()));
+  return ((m << 8 )/clockCyclesPerMicrosecond()* MillisTimer_Prescale_Value) + (t * MillisTimer_Prescale_Value / clockCyclesPerMicrosecond());
+#endif
+#endif
+}
+ 17e:	08 95       	ret
+
+00000180 <delay>:
+delay():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:280
+  // Empty
+}
+void yield(void) __attribute__ ((weak, alias("__empty")));
+
+void delay(unsigned long ms)
+{
+ 180:	cf 92       	push	r12
+ 182:	df 92       	push	r13
+ 184:	ef 92       	push	r14
+ 186:	ff 92       	push	r15
+ 188:	cf 93       	push	r28
+ 18a:	df 93       	push	r29
+ 18c:	6b 01       	movw	r12, r22
+ 18e:	7c 01       	movw	r14, r24
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:282
+  #if (F_CPU>=1000000L)
+  uint16_t start = (uint16_t)micros();
+ 190:	d1 df       	rcall	.-94     	; 0x134 <micros>
+ 192:	eb 01       	movw	r28, r22
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:286
+
+  while (ms > 0) {
+    yield();
+    while (((uint16_t)micros() - start) >= 1000 && ms) {
+ 194:	cf df       	rcall	.-98     	; 0x134 <micros>
+ 196:	6c 1b       	sub	r22, r28
+ 198:	7d 0b       	sbc	r23, r29
+ 19a:	68 3e       	cpi	r22, 0xE8	; 232
+ 19c:	73 40       	sbci	r23, 0x03	; 3
+ 19e:	a0 f0       	brcs	.+40     	; 0x1c8 <delay+0x48>
+ 1a0:	c1 14       	cp	r12, r1
+ 1a2:	d1 04       	cpc	r13, r1
+ 1a4:	e1 04       	cpc	r14, r1
+ 1a6:	f1 04       	cpc	r15, r1
+ 1a8:	39 f4       	brne	.+14     	; 0x1b8 <delay+0x38>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:296
+  #else
+  uint32_t start = millis();
+  while((millis() - start) < ms)  /* NOP */yield();
+  return;
+  #endif
+}
+ 1aa:	df 91       	pop	r29
+ 1ac:	cf 91       	pop	r28
+ 1ae:	ff 90       	pop	r15
+ 1b0:	ef 90       	pop	r14
+ 1b2:	df 90       	pop	r13
+ 1b4:	cf 90       	pop	r12
+ 1b6:	08 95       	ret
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:287
+  uint16_t start = (uint16_t)micros();
+
+  while (ms > 0) {
+    yield();
+    while (((uint16_t)micros() - start) >= 1000 && ms) {
+      ms--;
+ 1b8:	81 e0       	ldi	r24, 0x01	; 1
+ 1ba:	c8 1a       	sub	r12, r24
+ 1bc:	d1 08       	sbc	r13, r1
+ 1be:	e1 08       	sbc	r14, r1
+ 1c0:	f1 08       	sbc	r15, r1
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:288
+      start += 1000;
+ 1c2:	c8 51       	subi	r28, 0x18	; 24
+ 1c4:	dc 4f       	sbci	r29, 0xFC	; 252
+ 1c6:	e6 cf       	rjmp	.-52     	; 0x194 <delay+0x14>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:284
+void delay(unsigned long ms)
+{
+  #if (F_CPU>=1000000L)
+  uint16_t start = (uint16_t)micros();
+
+  while (ms > 0) {
+ 1c8:	c1 14       	cp	r12, r1
+ 1ca:	d1 04       	cpc	r13, r1
+ 1cc:	e1 04       	cpc	r14, r1
+ 1ce:	f1 04       	cpc	r15, r1
+ 1d0:	09 f7       	brne	.-62     	; 0x194 <delay+0x14>
+ 1d2:	eb cf       	rjmp	.-42     	; 0x1aa <delay+0x2a>
+
+000001d4 <__vector_5>:
+__vector_5():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:133
+#else
+
+#error Millis() timer not defined!
+
+#endif
+{
+ 1d4:	1f 92       	push	r1
+ 1d6:	0f 92       	push	r0
+ 1d8:	0f b6       	in	r0, 0x3f	; 63
+ 1da:	0f 92       	push	r0
+ 1dc:	11 24       	eor	r1, r1
+ 1de:	2f 93       	push	r18
+ 1e0:	3f 93       	push	r19
+ 1e2:	8f 93       	push	r24
+ 1e4:	9f 93       	push	r25
+ 1e6:	af 93       	push	r26
+ 1e8:	bf 93       	push	r27
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:136
+  // copy these to local variables so they can be stored in registers
+  // (volatile variables must be read from memory on every access)
+  unsigned long m = millis_timer_millis;
+ 1ea:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <millis_timer_millis>
+ 1ee:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <millis_timer_millis+0x1>
+ 1f2:	a0 91 63 00 	lds	r26, 0x0063	; 0x800063 <millis_timer_millis+0x2>
+ 1f6:	b0 91 64 00 	lds	r27, 0x0064	; 0x800064 <millis_timer_millis+0x3>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:137
+  unsigned char f = millis_timer_fract;
+ 1fa:	30 91 60 00 	lds	r19, 0x0060	; 0x800060 <_edata>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:149
+    f -= FRACT_MAX;
+    m += 1;
+  }
+...rmv */
+
+  f += FRACT_INC;
+ 1fe:	26 e0       	ldi	r18, 0x06	; 6
+ 200:	23 0f       	add	r18, r19
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:151
+
+  if (f >= FRACT_MAX)
+ 202:	2d 37       	cpi	r18, 0x7D	; 125
+ 204:	68 f1       	brcs	.+90     	; 0x260 <__stack+0x1>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:153
+  {
+    f -= FRACT_MAX;
+ 206:	29 e8       	ldi	r18, 0x89	; 137
+ 208:	23 0f       	add	r18, r19
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:155
+  m += 1;
+    m += MILLIS_INC;
+ 20a:	03 96       	adiw	r24, 0x03	; 3
+ 20c:	a1 1d       	adc	r26, r1
+ 20e:	b1 1d       	adc	r27, r1
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:162
+  else
+  {
+    m += MILLIS_INC;
+  }
+
+  millis_timer_fract = f;
+ 210:	20 93 60 00 	sts	0x0060, r18	; 0x800060 <_edata>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:163
+  millis_timer_millis = m;
+ 214:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <millis_timer_millis>
+ 218:	90 93 62 00 	sts	0x0062, r25	; 0x800062 <millis_timer_millis+0x1>
+ 21c:	a0 93 63 00 	sts	0x0063, r26	; 0x800063 <millis_timer_millis+0x2>
+ 220:	b0 93 64 00 	sts	0x0064, r27	; 0x800064 <millis_timer_millis+0x3>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:164
+  millis_timer_overflow_count++;
+ 224:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <millis_timer_overflow_count>
+ 228:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <millis_timer_overflow_count+0x1>
+ 22c:	a0 91 67 00 	lds	r26, 0x0067	; 0x800067 <millis_timer_overflow_count+0x2>
+ 230:	b0 91 68 00 	lds	r27, 0x0068	; 0x800068 <millis_timer_overflow_count+0x3>
+ 234:	01 96       	adiw	r24, 0x01	; 1
+ 236:	a1 1d       	adc	r26, r1
+ 238:	b1 1d       	adc	r27, r1
+ 23a:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <millis_timer_overflow_count>
+ 23e:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <millis_timer_overflow_count+0x1>
+ 242:	a0 93 67 00 	sts	0x0067, r26	; 0x800067 <millis_timer_overflow_count+0x2>
+ 246:	b0 93 68 00 	sts	0x0068, r27	; 0x800068 <millis_timer_overflow_count+0x3>
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:171
+
+//MICROSECONDS_PER_MILLIS_OVERFLOW=2048
+//MILLIS_INC=2
+//FRACT_INC=6
+//FRACT_MAX=125
+}
+ 24a:	bf 91       	pop	r27
+ 24c:	af 91       	pop	r26
+ 24e:	9f 91       	pop	r25
+ 250:	8f 91       	pop	r24
+ 252:	3f 91       	pop	r19
+ 254:	2f 91       	pop	r18
+ 256:	0f 90       	pop	r0
+ 258:	0f be       	out	0x3f, r0	; 63
+ 25a:	0f 90       	pop	r0
+ 25c:	1f 90       	pop	r1
+ 25e:	18 95       	reti
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:159
+  m += 1;
+    m += MILLIS_INC;
+  }
+  else
+  {
+    m += MILLIS_INC;
+ 260:	02 96       	adiw	r24, 0x02	; 2
+ 262:	a1 1d       	adc	r26, r1
+ 264:	b1 1d       	adc	r27, r1
+ 266:	d4 cf       	rjmp	.-88     	; 0x210 <__vector_5+0x3c>
+
+00000268 <main>:
+main():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/main.cpp:6
+#include <Arduino.h>
+
+int main(void)
+{
+  #ifdef TUNED_OSCCAL_VALUE
+  OSCCAL = TUNED_OSCCAL_VALUE; //set the oscillator calibration value based on the pins_arduino.h file. If this is not set, it will be optimised away
+ 268:	81 b7       	in	r24, 0x31	; 49
+ 26a:	81 bf       	out	0x31, r24	; 49
+init():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:699
+    } else {
+      OSCCAL += 5;
+    }
+  }
+  #endif
+  sei();
+ 26c:	78 94       	sei
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:831
+  #endif
+  #endif
+
+  // Use the Millis Timer for fast PWM (unless it doesn't have an output).
+  #if (TIMER_TO_USE_FOR_MILLIS == 0) && defined(WGM01)
+  sbi(TCCR0A, WGM01);
+ 26e:	8a b5       	in	r24, 0x2a	; 42
+ 270:	82 60       	ori	r24, 0x02	; 2
+ 272:	8a bd       	out	0x2a, r24	; 42
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:832
+  sbi(TCCR0A, WGM00);
+ 274:	8a b5       	in	r24, 0x2a	; 42
+ 276:	81 60       	ori	r24, 0x01	; 1
+ 278:	8a bd       	out	0x2a, r24	; 42
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:855
+  #endif
+
+  // Millis timer is always processor clock divided by MillisTimer_Prescale_Value (64)
+  #if (TIMER_TO_USE_FOR_MILLIS == 0)
+   #ifdef TCCR0B
+    TCCR0B = (TCCR0B & ~((1<<CS02)|(1<<CS01)|(1<<CS00))) | (MillisTimer_Prescale_Index << CS00);
+ 27a:	83 b7       	in	r24, 0x33	; 51
+ 27c:	88 7f       	andi	r24, 0xF8	; 248
+ 27e:	82 60       	ori	r24, 0x02	; 2
+ 280:	83 bf       	out	0x33, r24	; 51
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:867
+  TCCR1B = (TCCR1B & ~((1<<CS13)|(1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #elif (TIMER_TO_USE_FOR_MILLIS == 1)
+  TCCR1B = (TCCR1B & ~((1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #endif
+  // this needs to be called before setup() or some functions won't work there
+  sei();
+ 282:	78 94       	sei
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:872
+
+  #ifndef DISABLEMILLIS
+  // Enable the overlow interrupt (this is the basic system tic-toc for millis)
+  #if defined(TIMSK) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  sbi(TIMSK, TOIE0);
+ 284:	89 b7       	in	r24, 0x39	; 57
+ 286:	82 60       	ori	r24, 0x02	; 2
+ 288:	89 bf       	out	0x39, r24	; 57
+initToneTimerInternal():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:507
+  TCCR0B |= (ToneTimer_Prescale_Index << CS00);
+  #elif defined(__AVR_ATtiny43__)
+  TCCR1A = 3; //WGM 10=1, WGM11=1
+  TCCR1B = 3; //prescaler of 64
+  #elif (TIMER_TO_USE_FOR_TONE == 1) && defined(TCCR1)
+  TCCR1 &= ~((1<<CS13) | (1<<CS12) | (1<<CS11) | (1<<CS10)); //stop the clock to configure
+ 28a:	80 b7       	in	r24, 0x30	; 48
+ 28c:	80 7f       	andi	r24, 0xF0	; 240
+ 28e:	80 bf       	out	0x30, r24	; 48
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:509
+  // Use the Tone Timer for fast PWM as phase correct not supported by this timer
+  sbi(TCCR1, CTC1);
+ 290:	80 b7       	in	r24, 0x30	; 48
+ 292:	80 68       	ori	r24, 0x80	; 128
+ 294:	80 bf       	out	0x30, r24	; 48
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:511
+  //#if !defined(__AVR_ATtiny85__)
+  sbi(TCCR1, PWM1A); //for the tiny 85, Timer0 is used instead.
+ 296:	80 b7       	in	r24, 0x30	; 48
+ 298:	80 64       	ori	r24, 0x40	; 64
+ 29a:	80 bf       	out	0x30, r24	; 48
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:513
+  //#endif
+  sbi(GTCCR, PWM1B);
+ 29c:	8c b5       	in	r24, 0x2c	; 44
+ 29e:	80 64       	ori	r24, 0x40	; 64
+ 2a0:	8c bd       	out	0x2c, r24	; 44
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:514
+  OCR1C = 0xFF; //Use 255 as the top to match with the others as this module doesn't have a 8bit PWM mode.
+ 2a2:	8f ef       	ldi	r24, 0xFF	; 255
+ 2a4:	8d bd       	out	0x2d, r24	; 45
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:515
+  TCCR1 |= (ToneTimer_Prescale_Index << CS10);
+ 2a6:	80 b7       	in	r24, 0x30	; 48
+ 2a8:	84 60       	ori	r24, 0x04	; 4
+ 2aa:	80 bf       	out	0x30, r24	; 48
+init():
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:893
+
+  // Initialize the ADC
+  #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
+  #if defined(ADCSRA)
+    // set a2d prescale factor
+  ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+ 2ac:	86 b1       	in	r24, 0x06	; 6
+ 2ae:	88 77       	andi	r24, 0x78	; 120
+ 2b0:	83 68       	ori	r24, 0x83	; 131
+ 2b2:	86 b9       	out	0x06, r24	; 6
+C:\Users\User\AppData\Local\arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:895
+    // enable a2d conversions
+    sbi(ADCSRA, ADEN);
+ 2b4:	37 9a       	sbi	0x06, 7	; 6
+setup():
+D:\jospicant\Arduino\Attiny\power05/power05.ino:12
+#define adc_enable() (ADCSRA |= (1 <<ADEN))    //                         1000_0000 or con ADCSRA =>  ADEN =1
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led,OUTPUT);
+ 2b6:	61 e0       	ldi	r22, 0x01	; 1
+ 2b8:	80 e0       	ldi	r24, 0x00	; 0
+ 2ba:	0b df       	rcall	.-490    	; 0xd2 <pinMode>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:16
+
+  //Puertos no usados como INPUT_PULLUP con el fin de tener lógica controlada y evitar transiciones
+  //ESto no ahorra pero controla que se produzcan transiciones incontroladas = consumo
+  pinMode(PB1,INPUT_PULLUP);pinMode(PB2,INPUT_PULLUP);pinMode(PB3,INPUT_PULLUP);pinMode(PB4,INPUT_PULLUP);pinMode(PB5,INPUT_PULLUP); //Puertos no usados como INPUT_PULLUP
+ 2bc:	62 e0       	ldi	r22, 0x02	; 2
+ 2be:	81 e0       	ldi	r24, 0x01	; 1
+ 2c0:	08 df       	rcall	.-496    	; 0xd2 <pinMode>
+ 2c2:	62 e0       	ldi	r22, 0x02	; 2
+ 2c4:	82 e0       	ldi	r24, 0x02	; 2
+ 2c6:	05 df       	rcall	.-502    	; 0xd2 <pinMode>
+ 2c8:	62 e0       	ldi	r22, 0x02	; 2
+ 2ca:	83 e0       	ldi	r24, 0x03	; 3
+ 2cc:	02 df       	rcall	.-508    	; 0xd2 <pinMode>
+ 2ce:	62 e0       	ldi	r22, 0x02	; 2
+ 2d0:	84 e0       	ldi	r24, 0x04	; 4
+ 2d2:	ff de       	rcall	.-514    	; 0xd2 <pinMode>
+ 2d4:	62 e0       	ldi	r22, 0x02	; 2
+ 2d6:	85 e0       	ldi	r24, 0x05	; 5
+ 2d8:	fc de       	rcall	.-520    	; 0xd2 <pinMode>
+clock_prescale_set():
+c:\users\user\appdata\local\arduino15\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino5\avr\include\avr/power.h:1773
+        "out __SREG__, __tmp_reg__"
+        : /* no outputs */
+        : "d" (__tmp),
+          "I" (_SFR_IO_ADDR(CLKPR)),
+          "d" (__x)
+        : "r0");
+ 2da:	80 e8       	ldi	r24, 0x80	; 128
+ 2dc:	23 e0       	ldi	r18, 0x03	; 3
+ 2de:	30 e0       	ldi	r19, 0x00	; 0
+ 2e0:	0f b6       	in	r0, 0x3f	; 63
+ 2e2:	f8 94       	cli
+ 2e4:	86 bd       	out	0x26, r24	; 38
+ 2e6:	26 bd       	out	0x26, r18	; 38
+ 2e8:	0f be       	out	0x3f, r0	; 63
+ 2ea:	c0 e8       	ldi	r28, 0x80	; 128
+ 2ec:	88 e0       	ldi	r24, 0x08	; 8
+ 2ee:	e8 2e       	mov	r14, r24
+ 2f0:	f1 2c       	mov	r15, r1
+ 2f2:	03 e0       	ldi	r16, 0x03	; 3
+ 2f4:	10 e0       	ldi	r17, 0x00	; 0
+loop():
+D:\jospicant\Arduino\Attiny\power05/power05.ino:24
+  
+}
+
+void loop() {
+  
+  digitalWrite(led,1);                            
+ 2f6:	81 e0       	ldi	r24, 0x01	; 1
+ 2f8:	b2 de       	rcall	.-668    	; 0x5e <digitalWrite.constprop.0>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:25
+  delay(2000);
+ 2fa:	60 ed       	ldi	r22, 0xD0	; 208
+ 2fc:	77 e0       	ldi	r23, 0x07	; 7
+ 2fe:	80 e0       	ldi	r24, 0x00	; 0
+ 300:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	3e df       	rcall	.-388    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:26
+  digitalWrite(led,0);    //Enciendo 2 sg el LED                                3.6 mA con led encendido
+ 304:	80 e0       	ldi	r24, 0x00	; 0
+ 306:	ab de       	rcall	.-682    	; 0x5e <digitalWrite.constprop.0>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:27
+  delay(4000);            //Mido corriente cuando se apaga el LED               850 uA con el Attiny85 Activo (con led apagado)
+ 308:	60 ea       	ldi	r22, 0xA0	; 160
+ 30a:	7f e0       	ldi	r23, 0x0F	; 15
+ 30c:	80 e0       	ldi	r24, 0x00	; 0
+ 30e:	90 e0       	ldi	r25, 0x00	; 0
+ 310:	37 df       	rcall	.-402    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:28
+  adc_disable();          //Deshabilito el módulo d ADC y mido el consumo       650 uA con Attiny85 Activo pero con ADC desactivado  ( 200 uA de ahorro )           
+ 312:	37 98       	cbi	0x06, 7	; 6
+D:\jospicant\Arduino\Attiny\power05/power05.ino:29
+  delay(4000);
+ 314:	60 ea       	ldi	r22, 0xA0	; 160
+ 316:	7f e0       	ldi	r23, 0x0F	; 15
+ 318:	80 e0       	ldi	r24, 0x00	; 0
+ 31a:	90 e0       	ldi	r25, 0x00	; 0
+ 31c:	31 df       	rcall	.-414    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:30
+  adc_enable();           //Habilito el módulo de ADC y mido el consumo         850 uA al reactivar el ADC.
+ 31e:	37 9a       	sbi	0x06, 7	; 6
+D:\jospicant\Arduino\Attiny\power05/power05.ino:31
+  delay(4000);
+ 320:	60 ea       	ldi	r22, 0xA0	; 160
+ 322:	7f e0       	ldi	r23, 0x0F	; 15
+ 324:	80 e0       	ldi	r24, 0x00	; 0
+ 326:	90 e0       	ldi	r25, 0x00	; 0
+ 328:	2b df       	rcall	.-426    	; 0x180 <delay>
+clock_prescale_set():
+c:\users\user\appdata\local\arduino15\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino5\avr\include\avr/power.h:1773
+ 32a:	c7 01       	movw	r24, r14
+ 32c:	0f b6       	in	r0, 0x3f	; 63
+ 32e:	f8 94       	cli
+ 330:	c6 bd       	out	0x26, r28	; 38
+ 332:	86 bd       	out	0x26, r24	; 38
+ 334:	0f be       	out	0x3f, r0	; 63
+loop():
+D:\jospicant\Arduino\Attiny\power05/power05.ino:35
+
+  clock_prescale_set(clock_div_256);  // configuro reloj a  8MHz/256 = 31250 Hz   ==> 1MHz / 32   ( 1000 ms = 32 sg ) 31,25ms = 1 sg   125ms = 4sg
+
+  digitalWrite(led,1);                            
+ 336:	81 e0       	ldi	r24, 0x01	; 1
+ 338:	92 de       	rcall	.-732    	; 0x5e <digitalWrite.constprop.0>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:36
+  delay(125);            //4sg
+ 33a:	6d e7       	ldi	r22, 0x7D	; 125
+ 33c:	70 e0       	ldi	r23, 0x00	; 0
+ 33e:	80 e0       	ldi	r24, 0x00	; 0
+ 340:	90 e0       	ldi	r25, 0x00	; 0
+ 342:	1e df       	rcall	.-452    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:37
+  digitalWrite(led,0);   
+ 344:	80 e0       	ldi	r24, 0x00	; 0
+ 346:	8b de       	rcall	.-746    	; 0x5e <digitalWrite.constprop.0>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:38
+  delay(125);                                                                  
+ 348:	6d e7       	ldi	r22, 0x7D	; 125
+ 34a:	70 e0       	ldi	r23, 0x00	; 0
+ 34c:	80 e0       	ldi	r24, 0x00	; 0
+ 34e:	90 e0       	ldi	r25, 0x00	; 0
+ 350:	17 df       	rcall	.-466    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:39
+  adc_disable();                     
+ 352:	37 98       	cbi	0x06, 7	; 6
+D:\jospicant\Arduino\Attiny\power05/power05.ino:40
+  delay(125);                                                                 // 395 uA con ADC y 195uA sin ADC
+ 354:	6d e7       	ldi	r22, 0x7D	; 125
+ 356:	70 e0       	ldi	r23, 0x00	; 0
+ 358:	80 e0       	ldi	r24, 0x00	; 0
+ 35a:	90 e0       	ldi	r25, 0x00	; 0
+ 35c:	11 df       	rcall	.-478    	; 0x180 <delay>
+D:\jospicant\Arduino\Attiny\power05/power05.ino:41
+  adc_enable();           
+ 35e:	37 9a       	sbi	0x06, 7	; 6
+D:\jospicant\Arduino\Attiny\power05/power05.ino:42
+  delay(125);
+ 360:	6d e7       	ldi	r22, 0x7D	; 125
+ 362:	70 e0       	ldi	r23, 0x00	; 0
+ 364:	80 e0       	ldi	r24, 0x00	; 0
+ 366:	90 e0       	ldi	r25, 0x00	; 0
+ 368:	0b df       	rcall	.-490    	; 0x180 <delay>
+clock_prescale_set():
+c:\users\user\appdata\local\arduino15\packages\arduino\tools\avr-gcc\7.3.0-atmel3.6.1-arduino5\avr\include\avr/power.h:1773
+ 36a:	0f b6       	in	r0, 0x3f	; 63
+ 36c:	f8 94       	cli
+ 36e:	c6 bd       	out	0x26, r28	; 38
+ 370:	06 bd       	out	0x26, r16	; 38
+ 372:	0f be       	out	0x3f, r0	; 63
+ 374:	c0 cf       	rjmp	.-128    	; 0x2f6 <main+0x8e>
+
+00000376 <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 376:	f8 94       	cli
+
+00000378 <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 378:	ff cf       	rjmp	.-2      	; 0x378 <__stop_program>
