@@ -16,6 +16,11 @@
  * 
  * 
  *                                                             CONSUMO: 0.2 uA durmiendo (Alimentando con Pila CR2032 )
+ *                                                             
+ *                                                             FUSE LOW BYTE:       0x62 
+ *                                                             FUSE HIGH BYTE :     0xDF
+ *                                                             EXTENDED FUSE BYTE:  0xFF
+ *                                                             LOCK BIT BYTE:       0xFF
  * 
  * 
  ******************************************************************************************************************************************************************************
